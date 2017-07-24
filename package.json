@@ -11,12 +11,14 @@
   ],
   "xo": {
     "space": 2,
-    "semicolon": false
+    "semicolon": false,
+    "rules": {
+      "comma-dangle": ["error", "always-multiline"]
+    }
   },
   "scripts": {
     "docs": "documentation readme index.js -s API",
-    "test": "ava",
-    "lint": "xo"
+    "test": "xo && ava"
   },
   "devDependencies": {
     "ava": "^0.21.0",

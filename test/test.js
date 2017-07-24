@@ -15,7 +15,7 @@ test('miss include', t => {
 
 test('include type error', t => {
   const cmd = poi('index.js', 'include-type-error', {
-    include: true
+    include: true,
   })
   t.true(cmd.status !== 0)
   t.true(cmd.output.toString().includes('Parameter include type error'))
@@ -23,7 +23,7 @@ test('include type error', t => {
 
 test('extract mode', t => {
   const cmd = poi('index-with-css.js', 'extract-mode', {
-    include: svgPath
+    include: svgPath,
   })
   const spriteContent = fs.readFileSync(path.resolve(distPath, 'extract-mode/sprite.svg')).toString()
   t.true(
@@ -38,8 +38,8 @@ test('svg sprite in html', t => {
   const cmd = poi('index.js', 'svg-sprite-in-html', {
     include: svgPath,
     pluginOptions: {
-      extract: false
-    }
+      extract: false,
+    },
   })
   const [clientJs] = glob.sync(path.resolve(distPath, 'svg-sprite-in-html/client.*.js'))
   const spriteContent = fs.readFileSync(clientJs).toString()

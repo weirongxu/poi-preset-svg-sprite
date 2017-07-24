@@ -12,7 +12,7 @@ exports.poi = (source, target, options = {}, env = 'production') => {
     cwd: path.resolve('./'),
     env: {
       NODE_ENV: env,
-      POI_OPTIONS: JSON.stringify(options)
-    }
+      POI_OPTIONS: JSON.stringify(options),
+    },
   })
 }

@@ -61,8 +61,8 @@ module.exports = options => {
   return poi => {
     options = poi.merge({
       pluginOptions: {
-        extract: true
-      }
+        extract: true,
+      },
     }, options)
     poi.extendWebpack(['development', 'watch', 'test'], config => {
       register(config, options, false)
