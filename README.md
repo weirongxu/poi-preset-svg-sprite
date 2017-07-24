@@ -22,7 +22,7 @@ module.exports = {
   ]
 }
 // index.js
-import demo from 'demo.svg'
+const demo = require('./demo.svg')
 const rendered = `
 <svg>
   <use xlink:href="${demo.url}" />
@@ -41,7 +41,7 @@ module.exports = {
   ]
 }
 // index.js
-import demo from 'demo.svg'
+const demo = require('./demo.svg')
 const rendered = `
 <svg>
   <use xlink:href="#${demo.id}" />
