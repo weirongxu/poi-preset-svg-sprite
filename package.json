@@ -1,0 +1,33 @@
+{
+  "name": "poi-preset-svg-sprite",
+  "version": "1.0.0",
+  "description": "Add svg-sprite support in Poi.",
+  "main": "index.js",
+  "repository": "https://github.com/weirongxu/poi-preset-svg-sprite.git",
+  "author": "Weirong Xu <weirongxu.raidou@gmail.com>",
+  "license": "MIT",
+  "files": [
+    "index.js"
+  ],
+  "xo": {
+    "space": 2,
+    "semicolon": false
+  },
+  "scripts": {
+    "docs": "documentation readme index.js -s API",
+    "test": "ava",
+    "lint": "xo"
+  },
+  "devDependencies": {
+    "ava": "^0.21.0",
+    "documentation": "^4.0.0-rc.1",
+    "glob": "^7.1.2",
+    "poi": "^9.1.4",
+    "xo": "^0.18.2"
+  },
+  "dependencies": {
+    "svg-fill-loader": "^0.0.8",
+    "svg-sprite-loader": "^3.0.6",
+    "svgo-loader": "^1.2.1"
+  }
+}
