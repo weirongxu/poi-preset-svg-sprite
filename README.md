@@ -21,8 +21,9 @@ module.exports = {
     require('poi-preset-svg-sprite')()
   ]
 }
+
 // index.js
-const demo = require('./demo.svg')
+import demo from './demo.svg'
 const rendered = `
 <svg>
   <use xlink:href="${demo.url}" />
@@ -40,8 +41,9 @@ module.exports = {
     require('poi-preset-svg-sprite')({extract: false})
   ]
 }
+
 // index.js
-const demo = require('./demo.svg')
+import demo from './demo.svg'
 const rendered = `
 <svg>
   <use xlink:href="#${demo.id}" />
