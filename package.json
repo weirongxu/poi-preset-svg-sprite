@@ -1,6 +1,6 @@
 {
   "name": "poi-preset-svg-sprite",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Add svg-sprite support in Poi.",
   "main": "index.js",
   "repository": "https://github.com/weirongxu/poi-preset-svg-sprite.git",
