@@ -4,7 +4,7 @@
 [![NPM downloads](https://img.shields.io/npm/dm/poi-preset-svg-sprite.svg?style=flat-square)](https://npmjs.com/package/poi-preset-svg-sprite)
 [![Build Status](https://img.shields.io/circleci/project/weirongxu/poi-preset-svg-sprite/master.svg?style=flat-square)](https://circleci.com/gh/weirongxu/poi-preset-svg-sprite)
 
-Add [svg-sprite](https://github.com/kisenka/svg-sprite-loader) support in Poi.
+Add [svg-sprite](https://github.com/kisenka/svg-sprite-loader) support in [Poi](https://github.com/egoist/poi).
 
 ## Install
 
@@ -21,8 +21,9 @@ module.exports = {
     require('poi-preset-svg-sprite')()
   ]
 }
+
 // index.js
-const demo = require('./demo.svg')
+import demo from './demo.svg'
 const rendered = `
 <svg>
   <use xlink:href="${demo.url}" />
@@ -40,8 +41,9 @@ module.exports = {
     require('poi-preset-svg-sprite')({extract: false})
   ]
 }
+
 // index.js
-const demo = require('./demo.svg')
+import demo from './demo.svg'
 const rendered = `
 <svg>
   <use xlink:href="#${demo.id}" />
