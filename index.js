@@ -31,7 +31,7 @@ function register(config, options, isProduction) {
   }
 
   config.plugin('svg-sprite')
-    .use(new SpriteLoaderPlugin(options.svgSpritePluginOptions))
+    .use(SpriteLoaderPlugin, [options.svgSpritePluginOptions])
   // Config.plugins.delete('module-concatenation')
 }
 
