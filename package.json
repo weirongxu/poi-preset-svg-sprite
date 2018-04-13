@@ -16,6 +16,13 @@
       "comma-dangle": [
         "error",
         "always-multiline"
+      ],
+      "indent": [
+        "error",
+        2,
+        {
+          "MemberExpression": "off"
+        }
       ]
     }
   },
@@ -24,14 +31,15 @@
     "test": "xo && ava"
   },
   "devDependencies": {
-    "ava": "^0.21.0",
-    "documentation": "^5.1.0",
+    "ava": "^0.25.0",
+    "documentation": "^6.2.0",
     "glob": "^7.1.2",
     "poi": "^9.1.4",
-    "xo": "^0.18.2"
+    "xo": "^0.20.3"
   },
   "dependencies": {
-    "svg-sprite-loader": "^3.1.0",
-    "svgo-loader": "^1.2.1"
+    "svg-sprite-loader": "^3.7.3",
+    "svgo": "^1.0.5",
+    "svgo-loader": "^2.1.0"
   }
 }
