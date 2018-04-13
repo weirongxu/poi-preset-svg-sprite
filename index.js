@@ -19,18 +19,19 @@ function register(config, options, isProduction) {
   rule
     .use('svg-sprite-loader')
       .loader('svg-sprite-loader')
-      .options(options.pluginOptions)
+      .options(options.svgSpriteOptions)
       .end()
 
   if (isProduction) {
     rule
       .use('svgo-loader')
         .loader('svgo-loader')
+        .options(options.svgoOptions)
         .end()
   }
 
   config.plugin('svg-sprite')
-    .use(SpriteLoaderPlugin)
+    .use(new SpriteLoaderPlugin(options.svgSpritePluginOptions))
   // Config.plugins.delete('module-concatenation')
 }
 
@@ -39,10 +40,19 @@ function register(config, options, isProduction) {
  * @name svgSpritePreset
  * @param {Object} options
  * @param {String|String[]} [options.include] - Specific directory for svg files
- * @param {Object} [options.pluginOptions={
+ *
+ * @param {Object} [options.svgSpriteOptions={
  *   extract: true
- * }] - svg-sprite loader configuration
- * See {@link https://github.com/kisenka/svg-sprite-loader#configuration svg-sprite loader configuration}
+ * }] - svg-sprite-loader options
+ * See {@link https://github.com/kisenka/svg-sprite-loader#configuration svg-sprite-loader options}
+ *
+ * @param {Object} [options.svgSpritePluginOptions={}] - svg-sprite-loader-plugin options
+ * See {@link https://github.com/kisenka/svg-sprite-loader#plain-sprite svg-sprite-loader-plugin options}
+ *
+ * @param {Object} [options.svgoOptions={
+ *   plugins: []
+ * }] - svgo-loader options
+ * See {@link https://github.com/rpominov/svgo-loader#usage svgo-loader options}
  *
  */
 module.exports = options => {
@@ -60,8 +70,12 @@ module.exports = options => {
   })
   return poi => {
     options = poi.merge({
-      pluginOptions: {
+      svgSpriteOptions: {
         extract: true,
+      },
+      svgSpritePluginOptions: {},
+      svgoOptions: {
+        plugins: [],
       },
     }, options)
     poi.extendWebpack(['development', 'watch', 'test'], config => {

@@ -37,7 +37,7 @@ test('extract mode', t => {
 test('svg sprite in html', t => {
   const cmd = poi('index.js', 'svg-sprite-in-html', {
     include: svgPath,
-    pluginOptions: {
+    svgSpriteOptions: {
       extract: false,
     },
   })

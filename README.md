@@ -67,7 +67,13 @@ Add svg-sprite support in Poi.
 
 -   `options` **[Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)** 
     -   `options.include` **([String](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String) \| [Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;[String](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)>)?** Specific directory for svg files
-    -   `options.pluginOptions` **[Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)** svg-sprite loader configuration
-        See [svg-sprite loader configuration](https://github.com/kisenka/svg-sprite-loader#configuration) (optional, default `{
+    -   `options.svgSpriteOptions` **[Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)** svg-sprite-loader options
+        See [svg-sprite-loader options](https://github.com/kisenka/svg-sprite-loader#configuration) (optional, default `{
         extract:true
+        }`)
+    -   `options.svgSpritePluginOptions` **[Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)** svg-sprite-loader-plugin options
+        See [svg-sprite-loader-plugin options](https://github.com/kisenka/svg-sprite-loader#plain-sprite) (optional, default `{}`)
+    -   `options.svgoOptions` **[Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)** svgo-loader options
+        See [svgo-loader options](https://github.com/rpominov/svgo-loader#usage) (optional, default `{
+        plugins:[]
         }`)
