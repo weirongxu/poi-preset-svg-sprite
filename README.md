@@ -65,7 +65,7 @@ Add svg-sprite support in Poi.
 
 **Parameters**
 
--   `options` **[Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)** 
+-   `options` **[Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)** options
     -   `options.include` **([String](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String) \| [Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;[String](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)>)?** Specific directory for svg files
     -   `options.svgSpriteOptions` **[Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)** svg-sprite-loader options
         See [svg-sprite-loader options](https://github.com/kisenka/svg-sprite-loader#configuration) (optional, default `{
@@ -77,3 +77,5 @@ Add svg-sprite support in Poi.
         See [svgo-loader options](https://github.com/rpominov/svgo-loader#usage) (optional, default `{
         plugins:[]
         }`)
+
+Returns **[Function](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function)** poi plugin

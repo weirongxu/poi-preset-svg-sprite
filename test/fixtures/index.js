@@ -1,1 +1,1 @@
-import lrc from './svg/js.svg'
+import lrc from './svg/sprite-by-js.svg'

@@ -1,5 +1,1 @@
-let options = JSON.parse(process.env.POI_OPTIONS)
-
-module.exports = {
-  presets: [require('../../')(options)]
-}
+module.exports = eval(`optoins = ${process.env.POI_OPTIONS}`)

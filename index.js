@@ -2,7 +2,7 @@ const path = require('path')
 const SpriteLoaderPlugin = require('svg-sprite-loader/plugin')
 
 function excludePaths(config, paths) {
-  const exclude = config.module.rule('svg').exclude
+  const {exclude} = config.module.rule('svg')
   for (const path of paths) {
     exclude.add(path)
   }
@@ -11,7 +11,7 @@ function excludePaths(config, paths) {
 function register(config, options, isProduction) {
   excludePaths(config, options.include)
   const rule = config.module.rule('svg-sprite')
-  const include = rule.test(/\.(svg)(\?.*)?$/).include
+  const {include} = rule.test(/\.(svg)(\?.*)?$/)
   for (const path of options.include) {
     include.add(path)
   }
@@ -38,7 +38,7 @@ function register(config, options, isProduction) {
 /**
  * Add svg-sprite support in Poi.
  * @name svgSpritePreset
- * @param {Object} options
+ * @param {Object} options - options
  * @param {String|String[]} [options.include] - Specific directory for svg files
  *
  * @param {Object} [options.svgSpriteOptions={
@@ -53,36 +53,44 @@ function register(config, options, isProduction) {
  *   plugins: []
  * }] - svgo-loader options
  * See {@link https://github.com/rpominov/svgo-loader#usage svgo-loader options}
+ * @return {Function} poi plugin
  *
  */
-module.exports = options => {
-  if (!options.include) {
-    throw new Error('Missing required parameter: include')
+module.exports = ({
+  include,
+  svgSpriteOptions = {
+    extract: true,
+  },
+  svgSpritePluginOptions = {},
+  svgoOptions = {
+    plugins: [],
+  },
+}) => {
+  if (!include) {
+    throw new Error('Missing required parameter: "include"')
   }
-  if (typeof options.include === 'string') {
-    options.include = [options.include]
+  if (typeof include === 'string') {
+    include = [include]
   }
-  if (!Array.isArray(options.include)) {
-    throw new TypeError('Parameter include type error')
+  if (!Array.isArray(include)) {
+    throw new TypeError('Parameter "include" type error')
   }
-  options.include = options.include.map(inc => {
+  include = include.map(inc => {
     return path.resolve(process.cwd(), inc)
   })
   return poi => {
-    options = poi.merge({
-      svgSpriteOptions: {
-        extract: true,
-      },
-      svgSpritePluginOptions: {},
-      svgoOptions: {
-        plugins: [],
-      },
-    }, options)
-    poi.extendWebpack(['development', 'watch', 'test'], config => {
-      register(config, options, false)
-    })
-    poi.extendWebpack('production', config => {
-      register(config, options, true)
+    const options = {
+      include,
+      svgSpriteOptions,
+      svgSpritePluginOptions,
+      svgoOptions,
+    }
+    poi.chainWebpack(config => {
+      register(
+        config,
+        options,
+        config.comamnd === 'build'
+      )
     })
   }
 }

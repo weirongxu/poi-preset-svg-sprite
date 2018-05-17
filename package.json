@@ -32,10 +32,10 @@
   },
   "devDependencies": {
     "ava": "^0.25.0",
-    "documentation": "^6.2.0",
+    "documentation": "^6.3.3",
     "glob": "^7.1.2",
-    "poi": "^9.1.4",
-    "xo": "^0.20.3"
+    "poi": "^10.1.7",
+    "xo": "^0.21.0"
   },
   "dependencies": {
     "svg-sprite-loader": "^3.7.3",
