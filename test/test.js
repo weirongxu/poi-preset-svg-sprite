@@ -30,6 +30,7 @@ test('extract mode', t => {
   const cmd = poi('index-with-css.js', 'extract-mode', `{
     plugins: [require('../../')({
       include: "${svgPath}",
+      esModule: false,
     })],
   }`)
   const spriteContent = fs.readFileSync(path.resolve(distPath, 'extract-mode/sprite.svg')).toString()
@@ -42,7 +43,7 @@ test('extract mode', t => {
 })
 
 test('svg sprite in html', t => {
-  const cmd = poi('index-with-css.js', 'svg-sprite-in-html', `{
+  const cmd = poi('index.js', 'svg-sprite-in-html', `{
     plugins: [require('../../')({
       include: "${svgPath}",
       svgSpriteOptions: {
