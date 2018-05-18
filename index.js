@@ -1,6 +1,8 @@
 const path = require('path')
 const SpriteLoaderPlugin = require('svg-sprite-loader/plugin')
 
+const svgSpriteLoader = require.resolve('svg-sprite-loader')
+
 function excludePaths(config, paths) {
   const {exclude} = config.module.rule('svg')
   for (const path of paths) {
@@ -18,7 +20,7 @@ function register(config, options, isProduction) {
 
   rule
     .use('svg-sprite-loader')
-      .loader('svg-sprite-loader')
+      .loader(svgSpriteLoader)
       .options(options.svgSpriteOptions)
       .end()
 
