@@ -85,11 +85,11 @@ module.exports = ({
       svgSpritePluginOptions,
       svgoOptions,
     }
-    poi.chainWebpack(config => {
+    poi.chainWebpack((config, context) => {
       register(
         config,
         options,
-        config.comamnd === 'build'
+        context.comamnd === 'build'
       )
     })
   }
