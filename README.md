@@ -2,7 +2,7 @@
 
 [![NPM version](https://img.shields.io/npm/v/poi-preset-svg-sprite.svg?style=flat-square)](https://npmjs.com/package/poi-preset-svg-sprite)
 [![NPM downloads](https://img.shields.io/npm/dm/poi-preset-svg-sprite.svg?style=flat-square)](https://npmjs.com/package/poi-preset-svg-sprite)
-[![Build Status](https://img.shields.io/circleci/project/weirongxu/poi-preset-svg-sprite/master.svg?style=flat-square)](https://circleci.com/gh/weirongxu/poi-preset-svg-sprite)
+[![Build Status](https://img.shields.io/travis/com/weirongxu/poi-preset-svg-sprite.svg?style=flat-square)](https://travis-ci.com/weirongxu/poi-preset-svg-sprite)
 
 Add [svg-sprite](https://github.com/kisenka/svg-sprite-loader) support in [Poi](https://github.com/egoist/poi).
 
