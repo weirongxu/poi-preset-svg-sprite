@@ -35,7 +35,7 @@
     "documentation": "^6.2.0",
     "glob": "^7.1.2",
     "poi": "^9.1.4",
-    "xo": "^0.20.3"
+    "xo": "^0.24.0"
   },
   "dependencies": {
     "svg-sprite-loader": "^3.7.3",
