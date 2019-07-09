@@ -1,2 +1,2 @@
-import './index.js'
+import '.'
 import './index.css'

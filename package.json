@@ -12,11 +12,25 @@
   "xo": {
     "space": 2,
     "semicolon": false,
+    "extends": [
+      "plugin:jest/recommended"
+    ],
+    "ignore": [
+      "test/fixtures"
+    ],
     "rules": {
       "comma-dangle": [
         "error",
         "always-multiline"
       ],
+      "quote-props": "off",
+      "semi-style": [
+        "error",
+        "first"
+      ],
+      "valid-jsdoc": "off",
+      "no-warning-comments": "off",
+      "capitalized-comments": "off",
       "indent": [
         "error",
         2,
@@ -28,17 +42,20 @@
   },
   "scripts": {
     "docs": "documentation readme index.js -s API",
-    "test": "xo && ava"
+    "test": "xo && jest"
   },
   "devDependencies": {
-    "ava": "^0.25.0",
-    "documentation": "^6.2.0",
+    "documentation": "^11.0.1",
+    "eslint-plugin-jest": "^22.7.2",
     "glob": "^7.1.2",
-    "poi": "^9.1.4",
-    "xo": "^0.20.3"
+    "jest": "^24.8.0",
+    "pify": "^4.0.1",
+    "poi": "^12.7.0",
+    "rimraf": "^2.6.3",
+    "xo": "^0.24.0"
   },
   "dependencies": {
-    "svg-sprite-loader": "^3.7.3",
+    "svg-sprite-loader": "^4.1.6",
     "svgo": "^1.0.5",
     "svgo-loader": "^2.1.0"
   }

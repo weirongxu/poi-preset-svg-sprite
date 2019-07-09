@@ -1,5 +1,11 @@
-let options = JSON.parse(process.env.POI_OPTIONS)
+module.exports = eval(`optoins = ${process.env.POI_OPTIONS}`)
 
-module.exports = {
-  presets: [require('../../')(options)]
-}
+// module.exports = {
+//   resolve: '../../',
+//   options: {
+//     include: 'path/to',
+//     svgSpriteOptions: {
+//       extract: false,
+//     },
+//   }
+// }
